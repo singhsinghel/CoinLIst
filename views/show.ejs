@@ -1,0 +1,162 @@
+<%= layout('/layout/boilerplate') %>
+<style>
+    .detail{
+        color:rgb(40, 131, 131);
+        font-size: 3rem;
+    }
+    strong{
+        opacity: 50%;
+    }
+    stong .opacity{
+        opacity: 100%;
+    }
+    .row{
+        margin: 1rem;
+        padding: 1rem 0rem;
+        background-color:grey;
+        border-radius: 1rem;
+    }
+    .row.dark{
+        background-color: rgb(249, 242, 234);
+    }
+    .info-row{
+        background-color: transparent !important;
+        margin-bottom: -1rem;
+    }
+</style>
+
+<div class="info w-100 text-light dark d-flex justify-content-around align-items-center">
+    <div class="last text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.base_unit %></p>
+        </div>
+        <p class="text-secondary">Base Unit</p>
+    </div>
+    <div class="buy text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.buy %></p>
+        </div>
+        <p class="text-secondary">Buy</p>
+    </div>
+    <div class="name-price text-center">
+        <h5 class="text-secondary fw-light fs-5 text-center">Best Price to Trade</h5>
+    <div class="price align-self-start " style="font-size: 4rem;">₹<%=coin.last %></div>
+    <h5 class="text-secondary fw-light fs-6 text-center">Average <%= coin.base_unit.toUpperCase() %>/INR net price including commission</h5>
+</div>
+    <div class="sell text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.sell %></p>
+        </div>
+        <p class="text-secondary">Sell</p>
+    </div>
+    <div class="volume text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.volume %></p>
+        </div>
+        <p class="text-secondary">Volume</p>
+    </div>
+</div>
+
+<div class="container text-light dark text-center">
+
+    <div class="row info-row ">
+        <div class="col-md-2">
+            <strong>#</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Platform</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Last Traded Price</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Buy / Sell Price</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Difference</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Savings</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            1
+        </div>
+        <div class="col-md-2">
+            <img src="../assets/wazirx6358.jpg" alt="WazirX Logo" width="30"> WazirX
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹25,72,610 / ₹25,72,612
+        </div>
+        <div class="col-md-2">
+            -3.14%
+        </div>
+        <div class="col-md-2">
+            <i class='bx bxs-up-arrow'></i> ₹83,498
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            2
+        </div>
+        <div class="col-md-2">
+            <img src="../assets/bitbns.png" alt="Bitbns Logo" width="30"> Bitbns
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹28,55,164 / ₹28,82,157
+        </div>
+        <div class="col-md-2">
+            8.58%
+        </div>
+        <div class="col-md-2">
+            ₹2,27,796
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            3
+        </div>
+        <div class="col-md-2">
+            <img src="colodax-logo.png" alt="Colodax Logo" width="30"> Colodax
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹25,33,304 / ₹28,51,559
+        </div>
+        <div class="col-md-2">
+            -4.14%
+        </div>
+        <div class="col-md-2">
+            ₹1,10,074
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            4
+        </div>
+        <div class="col-md-2">
+            <img src="zebpay-logo.png" alt="Zebpay Logo" width="30"> Zebpay
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹26,49,999 / ₹26,21,000
+        </div>
+        <div class="col-md-2">
+            -0.23%
+        </div>
+        <div class="col-md-2">
+            ₹6,110
+        </div>
+    </div>
+</div>

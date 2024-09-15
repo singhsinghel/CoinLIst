@@ -1,0 +1,76 @@
+<style>
+    .form-check-input:checked {
+        background-color: black;
+        border-color: black;
+    }
+    .form-check-input::before {
+        background-color :#3dc6c1; 
+    }
+    .h2{
+        font-weight: 400 !important;
+    }
+    a{
+        text-decoration: none;
+    }
+    @media (max-width:500px) {
+        .header{
+            flex-direction: column;
+            gap:1rem
+        }
+        .h2{
+            width: 80%;
+        }
+    }
+</style>
+
+<div class="header p-5 d-flex flex-cloumn justify-content-between align-items-center">
+    <!-- Title Section -->
+    <div class="title">
+        <h2 class="h2" style="color: #3dc6c1; font-size:3rem;">HODLINFO</h2>
+    </div>
+
+    <!-- Options Section -->
+    <div class="options mx-auto d-flex align-items-center gap-2">
+        <div class="dropdown mr-3">
+            <button class="btn btn-secondary dropdown-toggle rounded-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                INR
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">INR</a></li>
+                <li><a class="dropdown-item" href="#">USD</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown mr-3">
+            <button class="btn btn-secondary dropdown-toggle rounded-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <%=coin? coin.name:'BTC' %>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <% coins.forEach((coin)=>{ %>
+                    <li><a class="dropdown-item" href="/index/<%=coin._id%>"><%= coin.name %></a></li>
+                    <%}) %>
+
+            </ul>
+        </div>
+
+        <!-- Button with anchor inside -->
+        <div class="btn  rounded-3">
+            <a href="https://wazirx.com/signup" class="text-light dark" target="_blank">BUY BTC</a>
+        </div>
+    </div>
+
+    <!-- Modes Section -->
+    <div class="modes d-flex justify-content-evenly align-items-center gap-4">
+        <!-- <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="position-relative rounded-circle bg-light border border-primary timer-circle d-flex justify-content-center align-items-center">
+                <span id="time" class="display-4 text-primary">60</span>
+            </div>
+        </div> -->
+        <button class="btn text-light dark p-1 mr-3 px-2 rounded-3 text-center" style="background-color: #3dc6c1;"> <i class='bx bxl-telegram' style='color:#ffffff' ></i> Connect Telegram</button>
+
+        <!-- Form Switch -->
+        <div class="form-check form-switch">
+            <input  value="true" class="form-check-input cursor-pointer dark-button" type="checkbox" checked  role="switch" id="flexSwitchCheckDefault" style="transform: scale(1.8);">
+        </div>
+    </div>
+</div>

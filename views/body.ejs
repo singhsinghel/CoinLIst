@@ -1,0 +1,156 @@
+<%= layout('/layout/boilerplate') %>
+<style>
+    .detail{
+        color:aqua;
+        font-size: 3rem;
+    }
+    strong{
+        opacity: 50%;
+    }
+    .row{
+        margin: 1rem;
+        padding: 1rem 0rem;
+        background-color:grey;
+        border-radius: 1rem;
+    }
+    .info-row{
+        background-color: transparent;
+        margin-bottom: -1rem;
+    }
+</style>
+
+<div class="info w-100 text-light dark d-flex justify-content-around align-items-center">
+    <div class="last text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.base_unit.toUpperCase() %></p>
+        </div>
+        <p class="text-secondary">Base Unit</p>
+    </div>
+    <div class="buy text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.buy %></p>
+        </div>
+        <p class="text-secondary">Buy</p>
+    </div>
+    <div class="name-price text-center">
+        <h5 class="text-secondary fw-light fs-5 text-center">Best Price to Trade</h5>
+    <div class="price align-self-start " style="font-size: 4rem;">₹<%=coin.last %></div>
+    <h5 class="text-secondary fw-light fs-6 text-center">Average <%= coin.base_unit %>/INR net price including commission</h5>
+</div>
+    <div class="sell text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.sell %></p>
+        </div>
+        <p class="text-secondary">Sell</p>
+    </div>
+    <div class="volume text-center">
+        <div class="digit">
+            <p class="detail"><%=coin.volume %></p>
+        </div>
+        <p class="text-secondary">Volume</p>
+    </div>
+</div>
+
+<div class="container text-light dark text-center">
+
+    <div class="row info-row ">
+        <div class="col-md-2">
+            <strong>#</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Platform</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Last Traded Price</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Buy / Sell Price</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Difference</strong>
+        </div>
+        <div class="col-md-2">
+            <strong>Savings</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            1
+        </div>
+        <div class="col-md-2">
+            <img class="rounded-circle" src="data:image/png;base64,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" alt="WazirX Logo" width="30"> WazirX
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹25,72,610 / ₹25,72,612
+        </div>
+        <div class="col-md-2">
+            -3.14%
+        </div>
+        <div class="col-md-2">
+            <i class='bx bxs-up-arrow'></i> ₹83,498
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            2
+        </div>
+        <div class="col-md-2">
+            <img class="rounded-circle" src="data:image/png;base64,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" alt="Bitbns Logo" width="30"> Bitbns
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹28,55,164 / ₹28,82,157
+        </div>
+        <div class="col-md-2">
+            8.58%
+        </div>
+        <div class="col-md-2">
+            ₹2,27,796
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            3
+        </div>
+        <div class="col-md-2">
+            <img class="rounded-circle" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAzAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABgcBBAUDAv/EAD0QAAEEAQEGAwQIBQIHAAAAAAABAgMEBREGEiExQVFhcbEHE4GRFCIjMkKhwdEkNlJi4TNyFRY0Q1Oy8f/EABsBAQACAwEBAAAAAAAAAAAAAAADBQECBAYH/8QAKBEAAgIBBAICAQQDAAAAAAAAAAECAxEEEiExE0EFIjIUFVFhIzNx/9oADAMBAAIRAxEAPwCegA+enoQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADVyeQq4unJcuybkTU+Ll6IniaGzm0VXPwPdE1YZ41+vC5dVROip3QmVFjhvS4NHZFPazsgIuoITcAagAAAAALwAyAAamUyFbFUpLdx6NjZ06uXsnibwg5y2xNXJR7NsEO2e24jv3n1skxtdJH/w70XgidGuXv4kxN7qJ0vEjWFin0AAQkgAAAAAAAAAAAANLK5Oriqj7VyTdjbyanN69kN3kvFeGnzKr2+ZlG5hVyKqsK/8ATK37m74eJ16OhXT59EN1m1cHN2gzdrN3FmnXcib/AKULeTE/c08fdsY61HZqPVkrOSp6L3Q1+HDQF+opLC6K/LbyXHs1n6+dqe8i0ZZjT7aHXi1e6eB11XRFVeDU5qvJCjsdfsY27HbqPVksfycnVF8Dfzm0mQzTt2w/3dfT/RjVUb8e5XWfHxlPcnhHTDU4jyWDk9ssNQcsbZ1sypzZAmqJ5qR617RbDlclOhGxvR0jlVfkQflwTkDojpKo+skbvmyebO7X5PKZytUsJCkL9dUYzReXc9totsb+KztipFDA+CPdVqORdV1TuRnYj+aKfm70Pvbv+aLfkz0NfDX5cY9GfJLZnJJKPtErOVEv0pIU6uiXeRPgSnGZfHZVu9QtxzL1Zro5PNCkz6jkkilSWJzmSt+69i6KnxMWaGqa44MQvkuy78lfq4yq+1el93ExOPDiq9kTqpUe0Oes52576XWOBi6Qwov3E7r4nhksxfybYku2HS+6TRmvr5mib6bTRpX9mLLd5jROvwJ5sZtdp7vHZd66L9WGw78mu/cgh70KU+Rtx1arPeTSLwaick7r4ITWVxshiXRpCTi+C89U4eKag0sNSkx+MgqTWHWHxN0V7v08DdPNzSjJpPKLOLbQABobAAAAAAAAAA1Mnjq2UpPp3Gb0bk1RerF6KhthdehtGbg9yNZRUlhlL57C2sJdWvZbqxdVilROD0OaXRn6VK7ip2ZFESFjVfv9WKnVCl101XTVU14KvU9Bpr/NDcV9sNkgAPTqp0dkQManXwWz17NyL9GbuQtXR87+DU/dSe4zYbE1ER1qN1yXTisi/V+RDbqK6vyZJCuUiD7Dub/zRTRHJrq7hr4H3t45qbV3G6proz0LTgx9KuqfRqdeLTluxpqnxPm5i8feR30ylBMrubnsTX58zh/cKnZux/RP+ne3BSALJy+wNGdquxkrqsnRjl3mL+xAspjLeKsrXuwrG78K82uTwU767oW/iznlXKPZpgAlIz3pU579qKtUjWSWRdEROnivgW3szgK+Bp7jPtLMifbTLzd4J2RCKezG3VZYs1XRtbakTeZMvNWpzaWGVevvkv8AGjs09axuCAAqTsAAAAAAAAAAAAA9QF8OY7MEN9pWS9xjoaEbtHWXbz9P6E/yVuviSLb219K2msMRdWQNSJP1/NSOHpNPDZUkVtkt0mZO3sngZM7e3XbzKcWizvT/ANU8TicenFV5J4lx7LYtuJw1eLTSR6b8i6c3Ka6q7w159maob2dOvBFVgZBXjbHExNGsamiIh6AHn5ScnllikkgADBkGjmMVUzFJ9W6zVqpq2T8Ua90U3gbQm4S3I1lFSWCkcvjbGIvS07afXZxR3R7eioaZZftGxjbGKbfY37Wquj16qxefyK0PRU2+WvcVtkNjwe9C3JQuQW4XaPhkRyafn+Rd1adtqrFYjXVkrUc0ootX2fWls7NxRu4uryOiX1T1OX5CG6vd/BNp5YlgkqAICjO4AAyAAAAAAAAAAZTi5NeWpgyn3m+ZtHsw+ikc49ZM3kH687MnqaRu5tm5m8i3tak9TSPTxxhFU+2buEgSxmKUTuT526+Wuv6F3dVTpyKU2fkbHnKD3fdbO1F+P/0utfvL5lX8ln6nXpfZgAFUdYAAAAABq5WulrF3K7uUsLm/NCjWO3mNd3RFL2uvbHTsPf8AdZE5V+RREXCJn+1C5+Nf0l/04dV2j6LD9lr9aWRiVddJWOT5f4K9LD9lrP4PIv7ysb8k/wAnRrP9MiOj80TcAHniyAAAAAAAAAAAAA7qnMBTIKl29qfRtprL9F3LCNlTz04kf115Fj+0nGrPQhyEbV367t1/i1St/I9Hp7PJUmVdscTZ9McrJGvbzaqOTzQu3E3WZHG17jNN2SNFXz00UpEl+wG0DcfYXH3XIlWd+sbnco3r+ikWspdlfHaNqJ7ZFlgBF1KHDXZYgAGDIAPOaWOCGSaZ6MjjTec5eSIbRi5NJGG8I4O3mQSls7NCi6SW/sm+S/eX5FT+SaJ0OztVm3ZzJPmarkrRpuQt8O/mpxj0Omq8VaiyttnukC1fZ7U+i7NRvci79iR0vw5J6FY0akl65DViRVdM5Gpp07/kXbVrsq1o68KaNiYjGnP8jPFe3+STTR+2T2QAFId4AAAAAAAAAAAACrogPK1YhqV5LNqRIoY03nvdyRDaMXJ4RhtLs8cq6ozHz/8AEla2orFSRV7fuUjIjEkekSqse8u6qpx014Hc2q2kmztpWsRY6Mbvsol/F/cvicIv9LQ6YYb5ZXW2KUgAYOkiJhsztrLQayplGunqpwbLr9eNO3ihYFDI0shGklK1FK1eiLxTzQpAzG98Tt+J7mO7tXQ5LtHXa89MmhfKPBfK8OeqGSrtjMvkps9VrTX53xPVd5jnaovAxtzkr7NobVaO5OyBEbpG1+icji/b/vt3E/6j65J9ls/jcSxXW7Ld5OUbF1cpW+021NrOO9yjPcUkXVIUXVXeLu5wFVV4qqq7+pV1ULxLCnS109dnPO6Ux1BgydBESz2cLQZmZFtP3bSs0ro5OC68+Pcs1E0KHa5zXNc1Va5q6o5OCopZmxe1TcmxuPyDkbcan2b1XRJk/RxXa7Tymt6OmixLhktABTHcAAAAAAAAAAAAOfBOZVm3eWv2snJSsRvr14V1ZEv4/wC5e5aZydocDVzlT3UqIyZifZTJzav6odmitjVP7EN0HJcFN+fqDayePs4u4+pdZuSM5KnJ6d07oeFeGWzMyGvG6SWR26xreql8sPn0V2GZrwS2p2QV2OklkXRrGpxU6GZ2dyeG0dcrqsS/92P6zU816fEsXZPZqLCV/ezaSX5E0e9eTP7W/qSBzWubuuait7KnD5Ffbr4ws2pZR0Q02Y5KF7eI1LZyexmJvq50ca1ZXfih4J8iO2/Z3aa7+DuxSJ0SRqtUnhraZ+8GkqJr0cXYf+Z6Xm70Prbv+abfkz0O7s3shlcZnK1qz7hYY1XeVj9V9D12j2PyGVzs1yCaBkEiNRFc7jwTQw7q/LnPozslsxgr4+o2PkkbFGxzpHLo1rU1VV7IhYNL2eQMVFv3nyf2xN3U+ZKcZhsfi2qlGrHGumm/pq5fia2a2qHXJmNEn2VVf2ayuPx7LtutuROXRya6uj/3J0OShfD2NkY6OVqPY5NHNcnBU7KVhtjss7ESLcpJvUXrxT/wqvRfAaXVq7h8MWU7OSLGWPfG9JGKrHNXVHIvFPEx69SWbHbKOybku3mqyk131GLwWZf2Oqc1XHdIiinJ8Ew2MylzKYlJb0Dmuau62ZU4Sp3Q7x8xsbGxGRtRjWpojUTgidj6POXTU5uSRZQTSwwACI3AAAAAAAAAAAAOZn8JVzdT3Flu7IzjFKicWKaGyezEWCYs8+7LefqjpEThG3s0kQ0OiOqsjDYiN1RctwRNAAc6JAOmiAADmPivzAABkwAAfMjGSxvjlY17HtVrmuTVFQ+gZTaeV2YaysMhtfYKrFmHTvej8ei7zIF56/0r4Exa1GtajURqNTRETkiGdEBLdqLLfyZpGtR6CAAhJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//2Q==" alt="Colodax Logo" width="30"> Colodax
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹25,33,304 / ₹28,51,559
+        </div>
+        <div class="col-md-2">
+            -4.14%
+        </div>
+        <div class="col-md-2">
+            ₹1,10,074
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            4
+        </div>
+        <div class="col-md-2">
+            <img class="rounded-circle" src="data:image/png;base64,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" alt="Zebpay Logo" width="30"> Zebpay
+        </div>
+        <div class="col-md-2">
+            ₹<%= coin.last%>
+        </div>
+        <div class="col-md-2">
+            ₹26,49,999 / ₹26,21,000
+        </div>
+        <div class="col-md-2">
+            -0.23%
+        </div>
+        <div class="col-md-2">
+            ₹6,110
+        </div>
+    </div>
+</div>
