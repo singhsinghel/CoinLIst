@@ -34,7 +34,7 @@
     </div>
     <div class="name-price text-center">
         <h5 class="text-secondary fw-light fs-5 text-center">Best Price to Trade</h5>
-    <div class="price align-self-start " style="font-size: 4rem;">₹<%=coin.last %></div>
+    <div class="price align-self-start " style="font-size: 4rem;">₹<%=new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(coin.last)%></div>
     <h5 class="text-secondary fw-light fs-6 text-center">Average <%= coin.base_unit %>/INR net price including commission</h5>
 </div>
     <div class="sell text-center">
